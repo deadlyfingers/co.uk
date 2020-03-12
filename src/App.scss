@@ -1,0 +1,15 @@
+body {
+  // disable webkit bounce effect in the browser
+  -webkit-overflow-scrolling: touch;
+  overflow: hidden;
+}
+
+.App {
+  background: #000000;
+  color: white;
+
+  img {
+    // disable image dragging
+    -webkit-user-drag: none;
+  }
+}

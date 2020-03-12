@@ -1,0 +1,129 @@
+$icon-size: 50px;
+
+.Nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 12;
+  user-select: none;
+
+  .overlay {
+    background-color: black;
+    opacity: 0.8;
+    width: 100vw;
+    height: 100vh;
+    border: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+
+    &>* {
+      display: none;
+      pointer-events: none;
+    }
+  }
+
+  .icon {
+    height: $icon-size;
+  }
+
+  ul {
+    display: none;
+  }
+
+  button {
+    cursor: pointer;
+    text-transform: capitalize;
+    font-size: 14px;
+    font-weight: bold;
+
+    &>* {
+      font-size: inherit;
+      font-weight: inherit;
+      pointer-events: none;
+    }
+  }
+
+  div[data-menu='main'] {
+    display: block;
+    text-decoration: none;
+    min-height: $icon-size;
+    color: white;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
+    min-width: 200px;
+    max-height: 100vh;
+    overflow: auto;
+
+    span {
+      line-height: $icon-size;
+    }
+
+    img {
+      display: block;
+    }
+
+    .icon {
+      filter: invert(1);
+    }
+
+    &>button {
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 10px;
+      outline: none;
+
+      .icon {
+        filter: invert(1);
+      }
+    }
+
+    &.active {
+      color: black;
+      background-color: white;
+
+      .icon {
+        filter: invert(0);
+      }
+
+      &>button {
+        cursor: pointer;
+        width: 100%;
+      }
+
+      ul {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+
+        li {
+          button {
+            cursor: pointer;
+            display: block;
+            width: 100%;
+            text-align: left;
+            background: black;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            border: none;
+            outline: none;
+
+            &:hover,
+            &:focus {
+              background: white;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+}
