@@ -1,6 +1,8 @@
-# [React (Typescript) web app](https://deadlyfingers.github.io/co.uk/) [![Build Status](https://travis-ci.org/deadlyfingers/co.uk.svg?branch=master)](https://travis-ci.org/deadlyfingers/co.uk)
+# [React WebApp for Design Portfolio ](https://deadlyfingers.github.io/co.uk/) [![Build Status](https://travis-ci.org/deadlyfingers/co.uk.svg?branch=master)](https://travis-ci.org/deadlyfingers/co.uk)
 
 This [React](https://reactjs.org/) project was created using [Create React App](https://github.com/facebook/create-react-app) optimised for [Typescript](https://www.typescriptlang.org/) development in [VSCode](https://code.visualstudio.com/).
+
+This [design portfolio](https://deadlyfingers.co.uk/) WebApp uses [React Awesome Slider](https://github.com/rcaferati/react-awesome-slider) for the full page slideshow.
 
 ## Getting Started
 
@@ -28,10 +30,13 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+First a [gulpfile](https://gulpjs.com/) script is ran to collate images contained within subfolders inside the `public/images` directory into JSON. The folder names will become the categories and images contained within will be sorted for slideshow. This generates the `imageCategories.json` file inside `src/generated` directory.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+The build is minified and the filenames include the hashes.
+
+`CNAME` file is copied into `build` directory for deployment to [GitHub Pages](https://pages.github.com/) with a [custom domain](https://help.github.com/en/github/working-with-github-pages/configuring-a-custom-domain-for-your-github-pages-site).
+
+Your app is ready to be deployed!
 
 ### `yarn eject`
 
