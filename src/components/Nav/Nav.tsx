@@ -18,12 +18,19 @@ const Nav: React.FunctionComponent<NavProps> = (props: NavProps) => {
       .replace(/\sand\s/gi, ' & '),
   )
   const active = isActive ? 'active' : ''
+  const isTouch = (): boolean => 'ontouchstart' in window || navigator.msMaxTouchPoints > 0
   return (
     <nav className="Nav">
       <div data-menu="main" className={active}>
-        <button onClick={(): void => setIsActive(!active)} onMouseEnter={(): void => setIsActive(true)} type="button">
-          <img src={Deadlyfingers} className="icon" alt="Design" />
-        </button>
+        {isTouch() ? (
+          <button onClick={(): void => setIsActive(!active)} type="button">
+            <img src={Deadlyfingers} className="icon" alt="Design" />
+          </button>
+        ) : (
+          <button onClick={(): void => setIsActive(!active)} onMouseEnter={(): void | null => setIsActive(true)} type="button">
+            <img src={Deadlyfingers} className="icon" alt="Design" />
+          </button>
+        )}
         <ul>
           {keys.map((key, i) => (
             <li key={key}>

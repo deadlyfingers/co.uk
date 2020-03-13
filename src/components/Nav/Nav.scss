@@ -47,6 +47,11 @@ $icon-size: 50px;
     }
   }
 
+  img {
+    display: block;
+    user-select: none;
+  }
+
   div[data-menu='main'] {
     display: block;
     text-decoration: none;
@@ -62,10 +67,6 @@ $icon-size: 50px;
 
     span {
       line-height: $icon-size;
-    }
-
-    img {
-      display: block;
     }
 
     .icon {
