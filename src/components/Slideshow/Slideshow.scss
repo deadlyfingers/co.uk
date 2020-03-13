@@ -7,5 +7,7 @@
 
   img {
     -webkit-user-drag: none;
+    object-fit: contain;
+    background-color: black;
   }
 }
