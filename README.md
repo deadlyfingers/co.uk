@@ -4,6 +4,8 @@ This [React](https://reactjs.org/) project was created using [Create React App](
 
 This [design portfolio](https://deadlyfingers.co.uk/) WebApp uses [React Awesome Slider](https://github.com/rcaferati/react-awesome-slider) for the full page slideshow.
 
+Function components use [React hooks](https://reactjs.org/docs/hooks-state.html) for component state.
+
 ## Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

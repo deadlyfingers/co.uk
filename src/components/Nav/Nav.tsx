@@ -5,6 +5,7 @@ import imageCategories from '../../generated'
 
 interface NavProps {
   selected: (index: number) => void
+  selectedIndex: number
 }
 
 const Nav: React.FunctionComponent<NavProps> = (props: NavProps) => {
@@ -19,6 +20,7 @@ const Nav: React.FunctionComponent<NavProps> = (props: NavProps) => {
   )
   const active = isActive ? 'active' : ''
   const isTouch = (): boolean => 'ontouchstart' in window || navigator.msMaxTouchPoints > 0
+  const { selectedIndex } = props
   return (
     <nav className="Nav">
       <div data-menu="main" className={active}>
@@ -35,6 +37,7 @@ const Nav: React.FunctionComponent<NavProps> = (props: NavProps) => {
           {keys.map((key, i) => (
             <li key={key}>
               <button
+                className={i === selectedIndex ? "selected" : ""}
                 value={i}
                 onClick={(e): void => {
                   setIsActive(false)

@@ -59,7 +59,32 @@ gulp.task('generate:json', async () => {
       const key = keys[i]
       // strip 'public/' prefix
       const images = values.map(filePath => filePath.replace(/^public\//g, ''))
-      json[key] = images
+      // sort by YYYY-MM where most date recent is first, otherwise localeCompare
+      const sortedImages = images.sort((a, b) => {
+				const aFile = a.substring(a.lastIndexOf('/')+1)
+				const bFile = b.substring(b.lastIndexOf('/')+1)
+				const aArr = aFile.split('-')
+				const bArr = bFile.split('-')
+				if (aArr.length < 3 && bArr.length < 3) {
+					return aFile.localeCompare(bFile, 'en-US', {numeric: true})
+				}
+				const aDate = aArr[0] + aArr[1]
+				const bDate = bArr[0] + bArr[1]
+				const aInt = parseInt(aDate)
+				const bInt = parseInt(bDate)
+
+				const min = 10 * 6
+				if (aInt > min || bInt > min) {
+					if (aInt > bInt) {
+						return -1
+					} else if (aInt < bInt) {
+						return 1
+					}
+				}
+
+				return aFile.localeCompare(bFile, 'en-US', {numeric: true})
+			});
+      json[key] = sortedImages
     })
   })
   writeFile('src/generated/imageCategories.json', JSON.stringify(json, null, 2))

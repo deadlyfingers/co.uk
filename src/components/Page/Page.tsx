@@ -26,7 +26,7 @@ const Page: React.FunctionComponent = () => {
 
   return (
     <div className="Page">
-      <Nav selected={selected} />
+      <Nav selected={selected} selectedIndex={index || 0} />
       <Slideshow id={index} images={images} />
     </div>
   )

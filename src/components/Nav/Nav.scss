@@ -115,10 +115,12 @@ $icon-size: 50px;
             margin: 0;
             padding: 20px;
             border: none;
+            border-top: 1px solid black;
             outline: none;
 
             &:hover,
-            &:focus {
+            &:focus,
+            &.selected {
               background: white;
               color: black;
             }
