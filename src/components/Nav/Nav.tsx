@@ -19,7 +19,7 @@ const Nav: React.FunctionComponent<NavProps> = (props: NavProps) => {
       .replace(/\sand\s/gi, ' & '),
   )
   const active = isActive ? 'active' : ''
-  const isTouch = (): boolean => 'ontouchstart' in window || navigator.msMaxTouchPoints > 0
+  const isTouch = (): boolean => 'ontouchstart' in window || navigator.maxTouchPoints > 0
   const { selectedIndex } = props
   return (
     <nav className="Nav">

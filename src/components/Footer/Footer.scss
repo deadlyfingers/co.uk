@@ -1,0 +1,28 @@
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  z-index: 11;
+  display: flex;
+
+  ul {
+    list-style: none;
+    margin: 0;
+
+    li {
+      float: left;
+
+      a {
+        display: block;
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        height: 50px;
+        line-height: 50px;
+        background-color: black;
+        padding: 0 20px;
+      }
+    }
+  }
+}
